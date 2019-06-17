@@ -9,8 +9,8 @@ from tools import rows_to_columns
 def parse_args():
 	parser = ArgumentParser(description="")
 	parser.add_argument("file_name", type=str, help="csv file name.")
-	parser.add_argument("column_names", type=str, nargs="+", help="column or row names to get.")
-	parser.add_argument("-sep", type=str, default=",", help="Separator.")
+	parser.add_argument("-c", "--columns", type=str, nargs="+", help="columns' names to get.", required=False)
+	parser.add_argument("-sep", type=str, default=",", help="separator.", required=False)
 
 	return parser.parse_args()
 
@@ -22,6 +22,8 @@ def get_column(file_name, column_names, separator):
 	with open(file_name, "r") as f:
 
 		csv_column_names = f.readline().strip().split(separator)
+
+		if not column_names: column_names = csv_column_names
 
 		indices = []
 		for name in column_names:
@@ -41,4 +43,4 @@ def get_column(file_name, column_names, separator):
 
 if __name__ == "__main__":
 	args = parse_args()
-	get_column(args.file_name, args.column_names, args.sep)
+	get_column(args.file_name, args.columns, args.sep)

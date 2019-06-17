@@ -7,7 +7,8 @@ from tools import rows_to_columns
 
 def parse_args():
 	parser = ArgumentParser(description="apply an operation to a list of numbers.")
-	parser.add_argument("expressions", nargs="+")
+	parser.add_argument("expressions", nargs="+", help="expression list for every column. If one spesified it will be applied to all given columns.")
+	parser.add_argument("-sep", default=",", help="separator.", required=False)
 
 	return parser.parse_args()
 
@@ -17,10 +18,10 @@ def eval_oper(express, y):
 	return eval(express, {"x": y})
 
 
-def apply(inpt, expressions):
+def apply(inpt, expressions, sep):
 
 	output = []
-	rows = [' '.join(rows.split()).split(' ') for rows in inpt.readlines()]
+	rows = [rows.strip().split(sep) for rows in inpt.readlines()]
 	columns = rows_to_columns(rows)
 
 	if len(expressions) < len(columns):
@@ -37,4 +38,4 @@ def apply(inpt, expressions):
 
 if __name__ == "__main__":
 	args = parse_args()
-	apply(sys.stdin, args.expressions)
+	apply(sys.stdin, args.expressions, args.sep)
