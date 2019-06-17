@@ -5,3 +5,8 @@ def rows_to_columns(data):
 			columns[i].append(datum)
 
 	return columns
+
+
+def get_rows_list(io_input, sep):
+
+	return [inpt.strip().split(sep) for inpt in io_input]

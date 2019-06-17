@@ -2,7 +2,7 @@ import sys
 from argparse import ArgumentParser
 
 from cool_printer import cool_printer
-from tools import rows_to_columns
+from tools import rows_to_columns, get_rows_list
 
 
 def parse_args():
@@ -18,24 +18,24 @@ def eval_oper(express, y):
 	return eval(express, {"x": y})
 
 
-def apply(inpt, expressions, sep):
+def apply_oper(io_inpt, expressions, sep):
 
-	output = []
-	rows = [rows.strip().split(sep) for rows in inpt.readlines()]
+	rows = get_rows_list(io_inpt, sep)
 	columns = rows_to_columns(rows)
 
 	if len(expressions) < len(columns):
 		expressions = [expressions[0] for _ in columns]
 
-	output = []
 	for i, column in enumerate(columns):
-		#print([datum for datum in column[1:]])
-		values = [str(eval_oper(expressions[i], float(datum))) for datum in column[1:]]
-		output.append([column[0], *values])
+		for j in range(len(column)):
+			if j == 0:
+				continue
+			columns[i][j] = str(eval_oper(expressions[i], float(column[j])))
 
-	cool_printer(output)
+	return columns
 
 
 if __name__ == "__main__":
 	args = parse_args()
-	apply(sys.stdin, args.expressions, args.sep)
+	columns = apply_oper(sys.stdin, args.expressions, args.sep)
+	cool_printer(columns)

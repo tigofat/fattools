@@ -15,7 +15,7 @@ def parse_args():
 	return parser.parse_args()
 
 
-def get_column(file_name, column_names, separator):
+def get_columns(file_name, column_names, separator):
 
 	assert os.path.isfile(file_name), f"{file_name} does not exist."
 
@@ -38,9 +38,10 @@ def get_column(file_name, column_names, separator):
 		rows = [column_names, *value_rows]
 		columns = rows_to_columns(rows)
 
-		cool_printer(columns)
+		return columns
 
 
 if __name__ == "__main__":
 	args = parse_args()
-	get_column(args.file_name, args.columns, args.sep)
+	columns = get_columns(args.file_name, args.columns, args.sep)
+	cool_printer(columns)

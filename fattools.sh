@@ -21,4 +21,6 @@ source_code_path=$(get_json_value "'source_code_path'")
 
 alias get_columns="$python_inter_name $source_code_path'/get_columns.py'"
 alias apply="$python_inter_name $source_code_path'/apply.py'"
+alias concat="$python_inter_name $source_code_path'/concat.py'"
+alias replace="$python_inter_name $source_code_path'/replace.py'"
 echo "Welcome to fattools."
