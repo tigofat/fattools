@@ -23,4 +23,5 @@ alias get_columns="$python_inter_name $source_code_path'/get_columns.py'"
 alias apply="$python_inter_name $source_code_path'/apply.py'"
 alias concat="$python_inter_name $source_code_path'/concat.py'"
 alias replace="$python_inter_name $source_code_path'/replace.py'"
-echo "Welcome to fattools."
+alias append="$python_inter_name $source_code_path'/append.py'"
+cat res/fattools_welcome.txt

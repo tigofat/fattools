@@ -18,8 +18,7 @@ def concat(file_names, sep):
 	concat_columns = []
 	for f_name in file_names:
 		columns = get_columns(f_name, None, sep)
-		for column in columns:
-			concat_columns.append(column)
+		concat_columns.extend(columns)
 
 	return concat_columns
 
