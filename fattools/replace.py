@@ -1,7 +1,6 @@
 import sys
 from argparse import ArgumentParser
 
-from get_columns import get_columns
 from tools import get_rows_list, rows_to_columns
 from cool_printer import cool_printer
 
@@ -10,7 +9,7 @@ def parse_args():
 	parser = ArgumentParser(description="replace values in csv.")
 	parser.add_argument("replace", type=str, help="item that will be replaced.")
 	parser.add_argument("replace_with", type=str, help="item to replace with.")
-	parser.add_argument("-sep", type=str, help="separator.", required=False)
+	parser.add_argument("-sep", type=str, default=',', help="separator.", required=False)
 
 	return parser.parse_args()
 

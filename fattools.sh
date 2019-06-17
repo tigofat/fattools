@@ -22,6 +22,9 @@ source_code_path=$(get_json_value "'source_code_path'")
 alias get_columns="$python_inter_name $source_code_path'/get_columns.py'"
 alias apply="$python_inter_name $source_code_path'/apply.py'"
 alias concat="$python_inter_name $source_code_path'/concat.py'"
+alias drop="$python_inter_name $source_code_path'/drop.py'"
 alias replace="$python_inter_name $source_code_path'/replace.py'"
 alias append="$python_inter_name $source_code_path'/append.py'"
 cat res/fattools_welcome.txt
+
+echo "Make sure congif json file is properly configured."

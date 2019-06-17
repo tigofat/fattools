@@ -33,6 +33,9 @@ def select_mode():
 
 
 def cool_printer(columns):
+	if len(columns) == 0:
+		return
+
 	printer_func = select_mode()
 	maxes = [len(max(column, key=lambda x: len(x)))
 			for column in columns]
