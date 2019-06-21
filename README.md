@@ -1,6 +1,7 @@
 # fattools
 
 fattools contains scripts and tools to deal with '.csv' files in bash.
+#### fattools is written in Python 3.
 
 ## Clone or download
 
@@ -26,7 +27,7 @@ source ./'path/to/fattools.sh' [OPTIONAL] config.json
 NOTE: `config.json` can be any json file with required fields, but by default it will pass `fat_config.json` file. 
 Please configure json file carefully, to not get unexpected errors.
 
-## Example
+### Example
 
 ```bash
 $ source ./fattools.sh fat_config.json
