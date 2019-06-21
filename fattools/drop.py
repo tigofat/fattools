@@ -6,8 +6,8 @@ from cool_printer import cool_printer
 
 
 def parse_args():
-	parser = ArgumentParser(description="pop column from csv.")
-	parser.add_argument("columns_names", type=str, nargs="+", help="column name to pop.")
+	parser = ArgumentParser(description="drop column from csv.")
+	parser.add_argument("columns_names", type=str, nargs="+", help="column names to drop.")
 	parser.add_argument("-sep", type=str, default=',', help="sperator.")
 
 	return parser.parse_args()
