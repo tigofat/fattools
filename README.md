@@ -71,7 +71,7 @@ Welcome to
  7805            414123.0
  
  ```
- 
+ NOTE: The printing stype is changed when `stdin` is a terminal only.
  ```bash
  $ get_columns sample_data/sample.csv -c id value | apply '5*x + 1' 'x + 1'
  
