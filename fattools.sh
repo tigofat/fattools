@@ -26,5 +26,3 @@ alias drop="$python_inter_name $source_code_path'/drop.py'"
 alias replace="$python_inter_name $source_code_path'/replace.py'"
 alias append="$python_inter_name $source_code_path'/append.py'"
 cat res/fattools_welcome.txt
-
-echo "Make sure congif json file is properly configured."
