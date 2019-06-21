@@ -9,7 +9,7 @@ git clone https://github.com/tigofat/fattools.git
 ```
 ## Usage
 
-In the repo folder configure `fat_config.json` file.
+In the repo folder, configure `fat_config.json` file.
 
 ```bash
 {
@@ -72,7 +72,7 @@ Welcome to
  ```
  
  ```bash
- $ et_columns sample_data/sample.csv -c id value | apply '5*x + 1' 'x + 1'
+ $ get_columns sample_data/sample.csv -c id value | apply '5*x + 1' 'x + 1'
  
  OUTPUT:
  
@@ -98,3 +98,6 @@ Welcome to
  39021.0            387595.0  
  39026.0            414124.0
  ```
+
+The sciprts also support `replace`, `append`, `concat` and `drop` operations on columns.
+Do `operation_name -h` to find out about the operatoins in more detail.
