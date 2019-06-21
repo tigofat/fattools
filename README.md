@@ -24,7 +24,7 @@ Once you have done this, call from anywhere
 source ./'path/to/fattools.sh' [OPTIONAL] config.json
 ```
 
-NOTE: `config.json` can be any json file with required fields, but by default it will pass `fat_config.json` file. 
+Note: `config.json` can be any json file with required fields, but by default it will pass `fat_config.json` file. 
 Please configure json file carefully, to not get unexpected errors.
 
 ### Example
@@ -71,7 +71,7 @@ Welcome to
  7805            414123.0
  
  ```
- NOTE: The printing stype is changed when `stdin` is a terminal only.
+ Note: The printing stype is changed when `stdin` is a terminal only.
  ```bash
  $ get_columns sample_data/sample.csv -c id value | apply '5*x + 1' 'x + 1'
  
