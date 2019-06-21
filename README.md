@@ -1,7 +1,7 @@
 # fattools
 
 fattools contains scripts and tools to deal with '.csv' files in bash.
-#### fattools is written in Python 3.
+##### fattools is written in Python 3.
 
 ## Clone or download
 
